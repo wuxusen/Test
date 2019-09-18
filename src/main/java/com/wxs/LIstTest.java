@@ -91,6 +91,10 @@ public class LIstTest {
         listNode4.next = listNode5;
         ListNode listNode6 = new ListNode(6);
         listNode5.next = listNode6;
+        ListNode listNode1 = reserverList(listNode);
+        System.out.println(listNode1);
+
+
 
 
       //  boolean palindrome = isPalindrome(listNode);
@@ -100,8 +104,8 @@ public class LIstTest {
       //  ListNode listNode1 = reserverList1(listNode);
      //   System.out.println(listNode1);
 
-        ListNode node = mergeTwoLists1(MergerList.getOne1(), MergerList.getOne());
-        System.out.println(node);
+       // ListNode node = mergeTwoLists1(MergerList.getOne1(), MergerList.getOne());
+       // System.out.println(node);
 
         // System.out.println("是否有环："+ circle);
 
