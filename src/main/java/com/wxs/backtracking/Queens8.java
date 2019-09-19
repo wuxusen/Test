@@ -38,7 +38,7 @@ public class Queens8 {
         // 每一行都有 8 中放法
         for (int column = 0; column < 8; ++column) {
             if (isOk(row, column)) { // 有些放法不满足要求
-                // 第 row 行的棋子放到了 column 列
+                // 第 row 行的  放到了 column 列
                 result[row] = column;
                 // 考察下一行
                 cal8queens(row + 1);

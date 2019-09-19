@@ -32,5 +32,18 @@ public class myTest1 {
     public static void main(String[] args) {
         myTest1 myTest1 = new myTest1();
 
+        String aa =  new String("bb");
+        myTest1.updateStr(aa);
+        System.out.println("outer >>>"+ aa);
+
+    }
+
+
+
+    public void updateStr(String str){
+
+
+        str = new String("cccccccc");
+        System.out.println("inner >>"+ str);
     }
 }

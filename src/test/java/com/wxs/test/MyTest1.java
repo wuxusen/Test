@@ -3,6 +3,8 @@ package com.wxs.test;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 类描述  ：
@@ -22,7 +24,17 @@ public class MyTest1 {
     public void test1(){
 
 
-        BigDecimal yss = new BigDecimal("Yss");
+        List<String> list = new ArrayList<>();
+
+        list.add("aaaa");
+      //  list.add("bbbb");
+
+
+        StringBuilder label = new StringBuilder();
+
+        label.append(list);
+
+        System.out.println(label.toString());
 
 
 
@@ -40,7 +52,7 @@ public class MyTest1 {
 
         double d1 = 1;
 
-        double d2 = 1.0;
+        double d2 = 1.000000000000000;
 
         System.out.println(d1 == d2);
 
@@ -51,5 +63,11 @@ public class MyTest1 {
         System.out.println(bigDecimal.compareTo(bigDecimal1));
 
 
+
+
+
     }
+
+
+
 }
