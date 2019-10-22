@@ -1,5 +1,6 @@
 package com.wxs.test;
 
+import com.google.common.collect.Lists;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -18,6 +19,90 @@ import java.util.List;
 
 
 public class MyTest1 {
+
+
+
+
+
+    @Test
+    public void test6() {
+
+
+       String str = "aaa_bbb_ccc_ddd";
+
+        int i = str.indexOf("_");
+
+        String substring = str.substring(0,i);
+
+
+        System.out.println(substring);
+
+
+    }
+
+    @Test
+    public void test5() {
+
+
+        boolean a = true || false;
+
+        System.out.println(a);
+
+
+    }
+
+        @Test
+    public void test4(){
+
+
+        Integer a = 128;
+
+        Integer b = 128;
+
+
+        // 统计 while( a > b){ }
+
+
+        System.out.println(a == b);
+
+
+
+
+        while (a != b){
+
+
+
+
+            System.out.println("--------------------");
+
+        }
+
+    }
+
+
+
+
+
+    @Test
+    public void test3(){
+
+
+        String str = "ssssss,aaaaa,bbbbbbbb,cccccccc,";
+
+        String[] split = str.split(",");
+
+        List<String> list = Lists.newArrayList(split);
+
+        System.out.println(list);
+
+
+
+
+
+    }
+
+
+
 
 
     @Test

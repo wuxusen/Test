@@ -3,6 +3,7 @@ package com.wxs;
 import com.wxs.queue.ListNode;
 
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -80,6 +81,9 @@ public class LIstTest {
 
     public static void main(String[] args) {
 
+
+
+
         ListNode listNode = new ListNode(1);
         ListNode listNode2 = new ListNode(2);
         listNode.next = listNode2;
@@ -91,21 +95,23 @@ public class LIstTest {
         listNode4.next = listNode5;
         ListNode listNode6 = new ListNode(6);
         listNode5.next = listNode6;
-        ListNode listNode1 = reserverList(listNode);
-        System.out.println(listNode1);
+
+
+//        ListNode listNode1 = reserverList(listNode);
+//        System.out.println(listNode1);
 
 
 
 
-      //  boolean palindrome = isPalindrome(listNode);
+      boolean palindrome = isPalindrome(listNode);
 
        // System.out.println(palindrome);
 
       //  ListNode listNode1 = reserverList1(listNode);
      //   System.out.println(listNode1);
 
-       // ListNode node = mergeTwoLists1(MergerList.getOne1(), MergerList.getOne());
-       // System.out.println(node);
+       ListNode node = mergeTwoLists(MergerList.getOne1(), MergerList.getOne());
+       System.out.println(node);
 
         // System.out.println("是否有环："+ circle);
 
@@ -155,7 +161,7 @@ public class LIstTest {
     }
 
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 
         if(l1 == null){
             return l2;
@@ -164,25 +170,33 @@ public class LIstTest {
         }
 
         if(l1.val < l2.val){
-            l1.next = mergeTwoLists(l1,l2.next);
+            l1.next = mergeTwoLists(l1.next,l2);
             return l1;
         }else {
-            l2.next = mergeTwoLists(l1.next,l2);
+            l2.next = mergeTwoLists(l1,l2.next);
             return l2;
         }
 
     }
 
+
+
+
+
+
+
     public static ListNode mergeTwoLists1(ListNode l1,ListNode l2){
         ListNode head = new ListNode(-1);
         ListNode prev = head;
+
         while (l1 != null && l2 != null){
             if (l1.val < l2.val){
 
+                prev.next = l1;
                 prev = prev.next;
                 l1 = l1.next;
             }else {
-
+                prev.next = l2;
                 prev = prev.next;
                 l2 = l2.next;
             }
@@ -194,6 +208,50 @@ public class LIstTest {
 
 
 
+
+
+
+    public static ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
+
+
+        if(l1 == null)return l2;
+        if(l2 == null)return l1;
+
+
+        if(l1.val < l2.val){
+            l1.next = mergeTwoLists2(l1, l2.next);
+            return l1;
+        }else {
+            l2.next = mergeTwoLists2(l1.next,l2);
+            return l2;
+
+        }
+
+    }
+
+    public static ListNode mergeTwoLists3(ListNode l1,ListNode l2){
+        ListNode head = new ListNode(-1);
+        ListNode pre = head;
+
+        while (l1 != null && l2 != null){
+            if(l1.val < l2.val){
+
+                pre = pre.next;
+                l1 = l1.next;
+
+            }else {
+                pre = pre.next;
+                l2 = l2.next;
+
+            }
+
+
+        }
+        pre.next = l1 == null ? l2: l1;
+        return head.next;
+
+
+    }
 
 
 }

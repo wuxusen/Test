@@ -1,6 +1,7 @@
 package com.wxs.thread.blockedQueue;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicReference;
@@ -15,18 +16,27 @@ import java.util.concurrent.atomic.AtomicReference;
  * 版    本： V1.0
  */
 
-public class completionServiceTest {
+public class completionServiceTest   {
 
 
     public static void main(String[] args) throws Exception {
 
+//
+//        completionServiceTest a = new completionServiceTest();
+////        int show = a.show();
+////        System.out.println("show ==>>" + show);
+//
+//        AtomicReference<Integer> in = a.show2();
+//        System.out.println(in.toString());
 
-        completionServiceTest a = new completionServiceTest();
-//        int show = a.show();
-//        System.out.println("show ==>>" + show);
 
-        AtomicReference<Integer> in = a.show2();
-        System.out.println(in.toString());
+        ArrayList<String> strings = new ArrayList<>();
+
+        strings.add(null);
+        strings.add(null);
+        strings.add("b");
+
+        System.out.println(strings.size());
 
 
     }
