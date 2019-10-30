@@ -22,7 +22,12 @@ public class MyTest1 {
 
 
 
+    @Test
+    public void test51(){
 
+
+        System.out.println(Integer.toHexString(4977));
+    }
 
     @Test
     public void test6() {

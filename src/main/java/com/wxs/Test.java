@@ -32,8 +32,57 @@ public class Test {
   }
 
   public static void main(String[] args) throws Exception {
-    AtomicLong c =calc();
-    System.out.println(c);
+//    AtomicLong c =calc();
+//    System.out.println(c);
+
+
+
+    Person person1 = new Person();
+    Person person2 = new Person();
+
+
+    new Thread(() -> {
+      synchronized (person1) {
+
+        try {
+          Thread.sleep(10000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
+        synchronized (person2) {
+
+        }
+
+
+      }
+
+
+    }).start();
+
+
+    new Thread(() -> {
+
+      synchronized (person2) {
+
+        try {
+          Thread.sleep(10000);
+        } catch (InterruptedException e) {
+          e.printStackTrace();
+        }
+
+        synchronized (person1) {
+
+
+        }
+
+
+      }
+
+
+    }).start();
+
 
   }
-}
+
+  }
