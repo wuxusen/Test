@@ -6,9 +6,9 @@ import com.wxs.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * 类描述  ：
@@ -23,6 +23,73 @@ import java.util.stream.Collectors;
 @Slf4j
 public class Test3 {
 
+
+
+
+
+    @Test
+    public void mapToString(){
+        Map<String,String> map = Maps.newHashMap();
+        map.put("1","yi");
+        map.put("2","er");
+
+
+        System.out.println(map.toString());
+
+
+    }
+
+
+
+
+    @Test
+    public void aaa(){
+
+
+        double x = 0.6181189802430973;
+        double y = -0.3589041095890411;
+
+
+
+        double pow = Math.pow(x, y);
+
+        System.out.println(pow);
+
+        //-0.6181189802430973
+        //-0.3589041095890411
+      /*  System.out.printf("e 的值为 %.4f%n", Math.E);
+        System.out.printf("pow(%.3f, %.3f) 为 %.3f%n", x, y, Math.pow(x, y));*/
+    }
+
+
+    @Test
+    public void test9() {
+
+
+        Person person = new Person();
+        person.setShow(1493740800000L);
+
+        Person person1 = new Person();
+        person1.setShow(1505836800000L);
+
+
+        Person person2 = new Person();
+        person2.setShow(1525836800000L);
+
+
+        ArrayList<Person> people = Lists.newArrayList(person, person1, person2);
+
+
+
+        people.sort((a, b) -> {
+            Long value = a.getShow() - b.getShow();
+            return b.getShow().compareTo(a.getShow());
+        });
+
+
+        System.out.println(people);
+
+    }
 
     @Test
     public void test8() {
@@ -60,6 +127,7 @@ public class Test3 {
 
     }
 
+/*
 
     @Test
     public void test12() {
@@ -69,6 +137,7 @@ public class Test3 {
 
         System.out.println(apiNameLabel);
     }
+*/
 
 
     @Test
@@ -144,5 +213,17 @@ public class Test3 {
 
     }
 
+
+    @Test
+    public void test81() {
+
+
+        String s = null;
+
+        int i = Integer.parseInt(s);
+
+        System.out.println(i);
+
+    }
 
 }

@@ -22,22 +22,101 @@ public class MyTest1 {
 
 
 
+
+
+
     @Test
-    public void test51(){
+    public void testSort1(){
+
+        int[]  arr = {4,1,7,3,5,12,18,20};
+        int[] temp = new int[21];
 
 
-        System.out.println(Integer.toHexString(4977));
+        for (int i = 0; i < arr.length; i++) {
+            temp[arr[i]]++;
+        }
+
+
+        for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < temp[i]; j++) {
+                System.out.println(i);
+            }
+
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Test
+    public void shorts() {
+
+        int[] arr = {8,5,3,3,3,20,17};
+
+        int[] temp = new int[21];
+        for (int i = 0; i < arr.length; i++) {
+            temp[arr[i]]++;
+        }
+        //顺序打印
+        for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < temp[i]; j++) {
+                System.out.println(i);
+            }
+        }
+
+
+    }
+
+    @Test
+    public void singleNonDuplicate() {
+
+        int[] nums = {3, 3, 7, 7, 10, 11, 11};
+
+        int a = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+
+            a = a ^ nums[i];
+        }
+        System.out.println(a);
+    }
+
+
+    @Test
+    public void test51() {
+
+
+        int n = 100;
+
+        n >>>= 1;
+
+
+        System.out.println(n);
+
     }
 
     @Test
     public void test6() {
 
 
-       String str = "aaa_bbb_ccc_ddd";
+        String str = "aaa_bbb_ccc_ddd";
 
         int i = str.indexOf("_");
 
-        String substring = str.substring(0,i);
+        String substring = str.substring(0, i);
 
 
         System.out.println(substring);
@@ -56,8 +135,8 @@ public class MyTest1 {
 
     }
 
-        @Test
-    public void test4(){
+    @Test
+    public void test4() {
 
 
         Integer a = 128;
@@ -71,11 +150,7 @@ public class MyTest1 {
         System.out.println(a == b);
 
 
-
-
-        while (a != b){
-
-
+        while (a != b) {
 
 
             System.out.println("--------------------");
@@ -85,11 +160,8 @@ public class MyTest1 {
     }
 
 
-
-
-
     @Test
-    public void test3(){
+    public void test3() {
 
 
         String str = "ssssss,aaaaa,bbbbbbbb,cccccccc,";
@@ -101,23 +173,17 @@ public class MyTest1 {
         System.out.println(list);
 
 
-
-
-
     }
 
 
-
-
-
     @Test
-    public void test1(){
+    public void test1() {
 
 
         List<String> list = new ArrayList<>();
 
         list.add("aaaa");
-      //  list.add("bbbb");
+        //  list.add("bbbb");
 
 
         StringBuilder label = new StringBuilder();
@@ -127,18 +193,11 @@ public class MyTest1 {
         System.out.println(label.toString());
 
 
-
-
     }
 
 
-
-
-
-
-
     @Test
-    public void testDouble(){
+    public void testDouble() {
 
         double d1 = 1;
 
@@ -153,11 +212,7 @@ public class MyTest1 {
         System.out.println(bigDecimal.compareTo(bigDecimal1));
 
 
-
-
-
     }
-
 
 
 }

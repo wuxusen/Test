@@ -1,6 +1,11 @@
 package com.wxs;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 /**
  * 类描述  ：
@@ -13,9 +18,17 @@ import lombok.Data;
  */
 
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Person {
 
-    private String age;
+    private int age;
     private String name;
+
+    private Long show;
+
+    private BigDecimal amount;
+
 
 }
