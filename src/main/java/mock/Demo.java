@@ -12,6 +12,7 @@ public class Demo {
     public Demo(Long currentTimestamp,Long dueTime){
         this.currentTimestamp = currentTimestamp;
         this.dueTime = dueTime;
+
     }
 
 
@@ -24,6 +25,8 @@ public class Demo {
         long delayDays = delayTime / 86400;
 
         return delayDays;
+
+
 
     }
 
