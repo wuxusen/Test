@@ -18,7 +18,27 @@ public class TestDeque {
 
     public static void main(String[] args) {
 
-        test3();
+        LinkedList<String> deque = new LinkedList<>();
+        deque.removeLast();
+
+        deque.offer("ss");
+        deque.add("1");
+        deque.add("2");
+        deque.add("3");
+
+        String s = deque.pollLast();
+
+        System.out.println("弹出最后一个应该是 3 -->" + s);
+
+        deque.addFirst("4");
+
+
+        String s1 = deque.pollFirst();
+
+        System.out.println("弹出第一个 应该是 4 -->" + s1);
+
+
+        System.out.println(deque);
 
     }
 
