@@ -23,8 +23,11 @@ import com.wxs.queue.ListNode;
 public class ReverseList206 {
 
 
+
+
+
     // 时间复杂度 O(n) ,空间复制度O(n)
-    public ListNode reverseList(ListNode head) {
+    public static ListNode reverseList(ListNode head) {
 
         if (head == null || head.next == null) {
             return head;
@@ -40,6 +43,20 @@ public class ReverseList206 {
     }
 
 
+    public static ListNode reverseList1_1(ListNode head) {
+
+       if(head == null || head.next == null){
+           return head;
+       }
+
+       ListNode node = reverseList1_1(head.next);
+
+       head.next.next = head;
+       head.next = null;
+       return node;
+    }
+
+
     // 时间复杂度 O(n) ,空间复制度O(1)
     public ListNode reverseList1(ListNode head) {
 
@@ -52,6 +69,28 @@ public class ReverseList206 {
             pre = curr;
             curr = next;
         }
+
+
+        return pre;
+    }
+
+
+    // 时间复杂度 O(n) ,空间复制度O(1)
+    public ListNode reverseList1_2(ListNode head) {
+        // 一个变量存当前节点   一个变量存翻转节点，一直循环 把当前节点放到pre前面，然后再赋值给pre
+        ListNode curr = head;
+        ListNode pre = null;
+
+        while (curr != null){
+
+            ListNode next = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = next;
+
+        }
+
+
 
 
         return pre;
@@ -124,7 +163,7 @@ public class ReverseList206 {
 
         ListNode listNode = ListUtils.get1();
 
-        ListNode listNode1 = reverseList13(listNode);
+        ListNode listNode1 = reverseList(listNode);
         System.out.println(listNode1);
 
     }

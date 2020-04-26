@@ -48,4 +48,42 @@ public class canJump55 {
 
 
 
+
+    public int canJump1(int[] nums) {
+
+        if(nums == null){
+            return -1;
+        }
+
+
+        int position = nums.length - 1;
+        int step = 0;
+
+        while (position != 0){
+
+            for (int i = 0; i < position; i++) {
+               if(nums[i] >= position - i){
+
+                   position = i;
+
+                   step ++ ;
+
+               }
+
+            }
+
+
+        }
+
+
+        return step;
+
+    }
+
+
+
+
+
+
+
 }

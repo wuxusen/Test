@@ -51,4 +51,25 @@ public class generateParenthesis22 {
     }
 
 
+
+
+    private void generate1(int left, int right ,int n,String str){
+
+
+        if(left>= n && right>= n){
+            list.add(str);
+            return;
+        }
+
+        if(right<=left && left <n)
+        generate1(left+1,right,n,str+"(");
+
+        if (left >= right)
+        generate1(left,right+1,n,str+")");
+
+
+    }
+
+
+
 }

@@ -14,6 +14,20 @@ import java.util.*;
 
 public class findLadders126 {
 
+
+    public static void main(String[] args) {
+
+
+        String beginWord = "hit",
+                endWord = "cog";
+        String[] wordList = {"hot", "dot", "dog", "lot", "log", "cog"};
+
+
+        findLadders126 findLadders126 = new findLadders126();
+
+        findLadders126.findLadders(beginWord,endWord,Arrays.asList(wordList));
+    }
+
     public List<List<String>> findLadders(String start, String end, List<String> wordList) {
         HashSet<String> dict = new HashSet<String>(wordList);
         List<List<String>> res = new ArrayList<List<String>>();
@@ -64,7 +78,7 @@ public class findLadders126 {
         ArrayList<String> res = new ArrayList<String>();
         char chs[] = node.toCharArray();
 
-        for (char ch ='a'; ch <= 'z'; ch++) {
+        for (char ch = 'a'; ch <= 'z'; ch++) {
             for (int i = 0; i < chs.length; i++) {
                 if (chs[i] == ch) continue;
                 char old_ch = chs[i];

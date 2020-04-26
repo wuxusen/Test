@@ -15,9 +15,9 @@ public class plusOne66 {
 
     public static void main(String[] args) {
 
-        int[] arry = {1, 8, 9, 9};
+        int[] arry = {1, 2,3};
 
-       plusOne(arry);
+       plusOne3(arry);
 
     }
 
@@ -41,26 +41,27 @@ public class plusOne66 {
     }
 
 
+    public static int[] plusOne3(int[] digits) {
 
 
-    // 实现计算器，必须使用栈，栈的特性决定了，必须要从后到前遍历
-    public static int[] plusOne2(int[] digits) {
+        for (int i = digits.length - 1; i >= 0; i++) {
+            digits[i]+=1;
+            digits[i] %= 10;
 
+            if(digits[i] != 0){
+                return digits;
+            }
 
-        for (int i =  digits.length - 1; i >= 0; i--) {
-            digits[i]++;
-
-            digits[i]=  digits[i] % 10;
-
-           if(digits[i] != 0){
-               return digits;
-           }
         }
-        digits = new int[digits.length+1];
-        digits[0] = 1;
-        return digits;
-    }
 
+
+        int[] newDigits = new int[digits.length +1];
+
+        newDigits[0] = 1;
+
+        return newDigits;
+
+    }
 
 
 

@@ -66,4 +66,36 @@ public class isValid20 {
         return stack.isEmpty();
 
     }
+
+
+    public boolean isValid1(String s) {
+
+        Stack<Character> stack = new Stack<>();
+
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char c = s.charAt(i);
+
+
+            if(MAPPINGS.containsKey(c)){
+
+
+               char pop =  stack.isEmpty() ? '1' : stack.pop();
+
+                if(pop != MAPPINGS.get(c)){
+
+                    return false;
+                }
+
+
+
+            }
+
+
+
+        }
+        return stack.isEmpty();
+
+    }
 }
