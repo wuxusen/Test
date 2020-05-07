@@ -1,9 +1,5 @@
 package com.wxs.sort;
 
-import com.wxs.queue.ListNode;
-
-import java.lang.reflect.Modifier;
-
 /**
  * 类描述  ：
  * 创建人  : 吴绪森
