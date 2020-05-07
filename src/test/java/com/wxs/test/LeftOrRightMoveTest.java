@@ -43,7 +43,7 @@ public class LeftOrRightMoveTest {
      */
     @Test
     public void test1() {
-        System.out.println(5 & 3);
+        System.out.println(7 & 1); // 判断奇偶和1与， 相同为1，不同为零，实际上就是用来判断最后一位是否是1或0，如果是0位偶数，1位奇数
 
     }
 
@@ -226,5 +226,33 @@ public class LeftOrRightMoveTest {
         System.out.println(i == 0 ? a : ~a + 1);
 
 
+    }
+
+    @Test
+    public void test12() {
+
+        int x = (9 >> 1) & 1;
+
+        System.out.println(x);
+
+    }
+
+
+    @Test
+    public void test13() {
+
+        int x = 24 & -24;
+
+        System.out.println(x);
+
+        String s1 = Integer.toBinaryString(24);
+        String s2 = Integer.toBinaryString(-24);
+
+        System.out.println(s1 + "===" + s2);
+
+    }
+
+    public boolean isPowerOfTwo(int n) {
+        return n != 0 && (n & (n - 1)) == 0;
     }
 }
