@@ -27,11 +27,8 @@ public class MergeSort3 {
 
 
     public static void sort(int[] a, int low, int high) {
-
         int mid = (high + low) / 2;
-
         if (low >= high) return;
-
         sort(a, low, mid);
         sort(a, mid + 1, high);
         mergeBy(a, low, mid, high);
@@ -39,9 +36,7 @@ public class MergeSort3 {
     }
 
     public static void mergeSort(int[] a, int low, int mid, int high) {
-
         int[] tmp = new int[high - low + 1];
-
         int i = low;
         int j = mid + 1;
         int k = 0;
@@ -53,7 +48,6 @@ public class MergeSort3 {
                 tmp[k++] = a[j++];
             }
         }
-
         while (i <= mid) {
 
             tmp[k++] = a[i++];
@@ -70,17 +64,17 @@ public class MergeSort3 {
 
     }
 
-    public static void mergeBy(int[] a ,int low, int mid ,int high){
+    public static void mergeBy(int[] a, int low, int mid, int high) {
         int[] left = new int[mid - low + 2];
-        int[] right = new int [high - mid + 1];
+        int[] right = new int[high - mid + 1];
 
 
         for (int i = low; i <= mid; i++) {
             left[i - low] = a[i];
         }
 
-        for (int i = mid+1; i <= high; i++) {
-            right[i - mid-1] = a[i];
+        for (int i = mid + 1; i <= high; i++) {
+            right[i - mid - 1] = a[i];
         }
 
         left[left.length - 1] = Integer.MAX_VALUE;
@@ -90,10 +84,10 @@ public class MergeSort3 {
         int j = 0;
         int k = low;
 
-        while (k <= high){
-            if(left[i] <= right[j]){
+        while (k <= high) {
+            if (left[i] <= right[j]) {
                 a[k++] = left[i++];
-            }else {
+            } else {
                 a[k++] = right[j++];
             }
 
@@ -101,10 +95,7 @@ public class MergeSort3 {
         }
 
 
-
     }
-
-
 
 
 }

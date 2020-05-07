@@ -18,6 +18,8 @@ public class CreatePool {
         //L1、L2 阶段共用的线程池
         ExecutorService es = Executors.
                 newFixedThreadPool(2);
+
+
         //L1 阶段的闭锁
         CountDownLatch l1 = new CountDownLatch(2);
         for (int i = 0; i < 2; i++) {
