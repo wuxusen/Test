@@ -84,4 +84,7 @@ public class solveNQueens51 {
         return board;
     }
 
+
+
+
 }
