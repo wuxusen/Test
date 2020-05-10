@@ -1,4 +1,4 @@
-package com.wxs.algorithm.week08;
+package com.wxs.algorithm1.week08;
 
 /**
  * 类描述  ：
@@ -23,10 +23,10 @@ package com.wxs.algorithm.week08;
  * 版    本： V1.0
  */
 
-public class reverseBits190 {
+public class LeetCode_190_0316 {
 
     public static void main(String[] args) {
-        reverseBits190 reverseBits190 = new reverseBits190();
+        LeetCode_190_0316 reverseBits190 = new LeetCode_190_0316();
 
         //LeetCode_190_0316.reverseBits(   964176192);
 

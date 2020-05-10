@@ -16,7 +16,7 @@ public class solveNQueens51 {
 
 
     public static void main(String[] args) {
-        solveNQueens51 solveNQueens51 = new solveNQueens51();
+        solveNQueens51v1 solveNQueens51 = new solveNQueens51v1();
         List<List<String>> lists = solveNQueens51.solveNQueens(8);
 
         System.out.println(lists);

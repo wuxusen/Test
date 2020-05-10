@@ -1,4 +1,4 @@
-package com.wxs.algorithm.week08;
+package com.wxs.algorithm1.week08;
 
 import java.util.*;
 
@@ -12,7 +12,7 @@ import java.util.*;
  * 版    本： V1.0
  */
 
-public class solveNQueens51v1 {
+public class LeetCode_51_0316 {
 
 
     public static void main(String[] args) {
@@ -83,5 +83,8 @@ public class solveNQueens51v1 {
         }
         return board;
     }
+
+
+
 
 }

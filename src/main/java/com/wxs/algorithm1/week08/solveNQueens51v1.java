@@ -1,4 +1,4 @@
-package com.wxs.algorithm.week08;
+package com.wxs.algorithm1.week08;
 
 import java.util.*;
 
