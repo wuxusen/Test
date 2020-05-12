@@ -37,16 +37,13 @@ public class reversePairs493 {
 
         int total = reversePairsHelper(nums, begin, mid)+reversePairsHelper(nums, mid + 1, end);
 
-        int count = 0;
 
-        for(int left = begin,right = mid+1; left <= mid;){
-            if(right >end || (long)nums[left] <= 2L* nums[right]){
-                left++;
-                total += count;
-            }else {
-                right++;
-                count++;
-            }
+        for (int i = begin,j = mid+1; i <= mid; i++) {
+
+            while (j <= end && nums[i]/2.0 > nums[j])j++;
+
+            total += j -(mid + 1);
+
         }
 
 
