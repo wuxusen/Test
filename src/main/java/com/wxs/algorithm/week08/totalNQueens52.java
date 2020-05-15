@@ -15,7 +15,7 @@ public class totalNQueens52 {
 
     public static void main(String[] args) {
         totalNQueens52 totalNQueens52 = new totalNQueens52();
-        int i = totalNQueens52.totalNQueens(4);
+        int i = totalNQueens52.totalNQueue1(4);
         System.out.println(i);
     }
 
@@ -62,7 +62,7 @@ public class totalNQueens52 {
 
 
     /**
-     * 1. 将 x 最右边的 n 位清零:x & (~0 << n)
+     *   1. 将 x 最右边的 n 位清零:x & (~0 << n)
      * * 2. 获取 x 的第 n 位值(0 或者 1): (x >> n) & 1
      * * 3. 获取 x 的第 n 位的幂值:x & (1 << (n -1))
      * * 4. 仅将第 n 位置为 1:x | (1 << n)
@@ -76,24 +76,20 @@ public class totalNQueens52 {
      */
     private void solve(int row, int ld, int rd) {
 
-        System.out.println("row >>" + row + " >>> "+Integer.toBinaryString(row));
-        System.out.println("ld>>" + ld + " >>> " + Integer.toBinaryString(ld));
-        System.out.println("rd>>" + rd + " >>> " + Integer.toBinaryString(rd));
-
+        System.out.println("row >> " +Integer.toBinaryString(row) + " ，ld >> "  + Integer.toBinaryString(ld)+" ，rd >> "  + Integer.toBinaryString(rd));
 
         if (row == size) {
             count++;
             return;
         }
+
         int pos = size & (~(row | ld | rd));
 
-        System.out.println("pos>>" + pos + " >>> " + Integer.toBinaryString(pos));
+        System.out.println("可以放置皇后的位置 >>" + Integer.toBinaryString(pos));
         while (pos != 0) {
             int p = pos & (-pos);
-            System.out.println("p>>" + p + " >>> " + Integer.toBinaryString(p));
-            pos -= p; // pos &= pos - 1;  bits = bits & (bits — 1) # 表示在p位置上放入皇后
-
-            System.out.println("while pos>>" + pos + " >>> " + Integer.toBinaryString(pos));
+            pos -= p;
+            System.out.println("while pos>>" + Integer.toBinaryString(pos));
             solve(row | p, (ld | p) << 1, (rd | p) >> 1);
         }
     }
@@ -103,6 +99,32 @@ public class totalNQueens52 {
         size = (1 << n) - 1;
         solve(0, 0, 0);
         return count;
+    }
+
+
+
+
+    public int totalNQueue1(int n){
+        count = 0;
+        size = (1 << n)-1;
+        solve1(0,0,0);
+        return count;
+    }
+
+    private void solve1(int row, int ld, int rd) {
+
+        if(row == size){
+            count++;
+            return;
+        }
+        // 取可以放皇后的位置
+        int pos =size &  (~(row|ld|rd)) ;
+        while (pos != 0){
+            int p = pos & (-pos); // 获取最后以为1，组成二进制，可以放的皇后的位置
+            pos = pos &(pos -1); // 把最后一个1置为0，下次使用
+            solve1(row|p,(ld|p) << 1,(rd|p) >> 1);
+        }
+
     }
 
 
