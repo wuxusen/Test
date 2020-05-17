@@ -1,4 +1,4 @@
-package com.wxs.algorithm.week09;
+package com.wxs.algorithm1.week09;
 
 /**
  * 类描述  ：
@@ -10,7 +10,7 @@ package com.wxs.algorithm.week09;
  * 版    本： V1.0
  */
 
-public class maxProfit121 {
+public class LeetCode_121_gp_0316 {
 
     /**
      * 分析状态转移方程
