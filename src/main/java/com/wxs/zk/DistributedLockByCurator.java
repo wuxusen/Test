@@ -36,7 +36,8 @@ public class DistributedLockByCurator implements InitializingBean{
                         .creatingParentsIfNeeded()
                         .withMode(CreateMode.EPHEMERAL)
                         .withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE)
-                        .forPath(keyPath);
+                .forPath(keyPath);
+
                 logger.info("success to acquire lock for path:{}", keyPath);
                 break;
             } catch (Exception e) {

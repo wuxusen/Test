@@ -43,18 +43,23 @@ class IdGenerator1{
     private IdGenerator1(){}
 
 
-    private static class SingletonHolder{
-        private static final IdGenerator1 instance = new IdGenerator1();
+    public static class IdGeneratora{
+
+        public static final IdGenerator1 instance = new IdGenerator1();
+
     }
+
 
     public static IdGenerator1 getInstance(){
-        return SingletonHolder.instance;
+        return IdGeneratora.instance;
     }
 
-
-    public long getId(){
-        return id.incrementAndGet();
+    public  Long getId(){
+        return id.getAndIncrement();
     }
 
+    public static void main(String[] args) {
+        IdGenerator1.getInstance().getId();
+    }
 
 }
