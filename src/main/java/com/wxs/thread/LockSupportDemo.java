@@ -14,11 +14,14 @@ public class LockSupportDemo {
         }
         @Override public void run() {
             synchronized (u) {
+<<<<<<< HEAD
                 try {
                     Thread.sleep(1000L);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+=======
+>>>>>>> 算法啊
                 System.out.println("in " + getName());
                 LockSupport.park();
                 if (Thread.currentThread().isInterrupted()) {
@@ -31,6 +34,7 @@ public class LockSupportDemo {
 
     public static void main(String[] args) throws InterruptedException {
         t1.start();
+<<<<<<< HEAD
         LockSupport.unpark(t1);
      //   Thread.sleep(1000L);
 //        t2.start();
@@ -41,5 +45,14 @@ public class LockSupportDemo {
      //   LockSupport.unpark(t2);
         t1.join();
       //  t2.join();
+=======
+        Thread.sleep(1000L);
+        t2.start();
+        Thread.sleep(3000L);
+        t1.interrupt();
+        LockSupport.unpark(t2);
+        t1.join();
+        t2.join();
+>>>>>>> 算法啊
     }
 }
