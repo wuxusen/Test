@@ -1,8 +1,9 @@
 package com.wxs.lock;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.concurrent.BrokenBarrierException;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Semaphore;
 
 /**
  * 类描述  ：
@@ -16,29 +17,31 @@ import java.util.Map;
 
 public class TestMap {
 
-    public static void main(String[] args) {
-        Map<String, String> paramMap = new HashMap<>();
-        paramMap.put("1", "1");
-        paramMap.put("2", "2");
-        paramMap.put("3", "3");
-        paramMap.put("4", "4");
+    public static void main(String[] args) throws InterruptedException {
+        CountDownLatch  countDownLatch = new CountDownLatch(3);
+
+        countDownLatch.countDown();
+        countDownLatch.countDown();
+        countDownLatch.countDown();
+
+        countDownLatch.await();
 
 
-        Map<String, String> dataParam = new HashMap<>();
+        Semaphore semaphore = new Semaphore(10);
+
+        semaphore.acquire();
+        semaphore.release();
 
 
-        Iterator<String> iterator = paramMap.keySet().iterator();
+        CyclicBarrier c = new CyclicBarrier(3);
 
-        while (iterator.hasNext()) {
-
-
-            for (String s : dataParam.keySet()) {
-                if (iterator.next().equals(s)) {
-
-                }
-            }
-
+        try {
+            int await = c.await();
+        } catch (BrokenBarrierException e) {
+            e.printStackTrace();
         }
+
+
     }
 
 
