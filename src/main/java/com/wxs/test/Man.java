@@ -1,5 +1,8 @@
 package com.wxs.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 类描述  ：
  * 创建人  : 吴绪森
@@ -11,4 +14,13 @@ package com.wxs.test;
  */
 
 public class Man  extends  Person{
+
+    public static void main(String[] args) {
+
+
+        List<String> sss = new ArrayList<>();
+
+        Integer[] aa = new Integer[3];
+       // Stream.of(aa).forEach();
+    }
 }
