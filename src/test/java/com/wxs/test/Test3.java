@@ -24,6 +24,16 @@ import java.util.Map;
 public class Test3 {
 
 
+    @Test
+    public void mapT1111(){
+
+
+
+
+
+
+
+    }
 
 
 

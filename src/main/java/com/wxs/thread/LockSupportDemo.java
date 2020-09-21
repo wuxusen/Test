@@ -12,7 +12,13 @@ public class LockSupportDemo {
         public ChangeObjectThread(String name) {
             super(name);
         }
-        @Override public void run() {
+
+        @Override
+        public void run() {
+
+
+            synchronized (u) {
+
 
                 try {
                     Thread.sleep(1000L);
@@ -28,20 +34,29 @@ public class LockSupportDemo {
                 System.out.println("继续执行");
             }
 
-    }
+        }
 
-    public static void main(String[] args) throws InterruptedException {
-        t1.start();
+        public static void main(String[] args) throws InterruptedException {
+            t1.start();
+            LockSupport.unpark(t1);
+            //   Thread.sleep(1000L);
+//        t2.start();
+//        Thread.sleep(3000L);
+            //       t1.interrupt();
 
-        LockSupport.unpark(t1);
+            LockSupport.unpark(t1);
 
-        Thread.sleep(1000L);
-        t2.start();
-        Thread.sleep(3000L);
-        t1.interrupt();
-        LockSupport.unpark(t2);
-        t1.join();
-        t2.join();
+            //   LockSupport.unpark(t2);
+            t1.join();
+            //  t2.join();
+            Thread.sleep(1000L);
+            t2.start();
+            Thread.sleep(3000L);
+            t1.interrupt();
+            LockSupport.unpark(t2);
+            t1.join();
+            t2.join();
 
+        }
     }
 }
