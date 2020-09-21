@@ -33,9 +33,9 @@ public class TypeStrategy {
         FIELDHANDLER_MAP.put("record_type",new RecordTypeFieldHandler());
         FIELDHANDLER_MAP.put("multi_what_object_reference",new MultiWhatObjectReferenceFieldHandler());
         FIELDHANDLER_MAP.put("currency_group",new CurrencyGroupFieldHandler());
-
-
-
+        FIELDHANDLER_MAP.put("select_one",new SelectOneFieldHandler());
+        FIELDHANDLER_MAP.put("select_many",new SelectOneFieldHandler());// 单选默认支持多选
+        FIELDHANDLER_MAP.put("number",new NumberFieldHandler());
     }
 
 
